@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
+#from django.core.mail import send_mail
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -81,7 +81,8 @@ DATABASES = {
     }
 }
 
-
+ACCOUNT_ACTIVATION_DAYS = 7
+AUTH_PROFILE_MODULE = 'user_profile.UserProfile'
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -99,6 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 
 # Internationalization
@@ -120,3 +122,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.aaronbauch.com'
+EMAIL_HOST_USER = 'aaron@aaronbauch.com'
+EMAIL_HOST_PASSWORD = '2856alpha'
+SERVER_EMAIL = 'aaron@aaronbauch.com'
+DEFAULT_FROM_EMAIL = 'Aaron@aaronbauch.com'
