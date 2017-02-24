@@ -25,7 +25,7 @@ SECRET_KEY = '1&8g0njq^k%dv(h5f-c_yu5kcfwjgi5h^e$@&@%5x$tu%svmfa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', '192.168.1.14']
 
 
 # Application definition
@@ -124,9 +124,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS=True
 EMAIL_PORT = 587
-EMAIL_HOST = 'smtp.aaronbauch.com'
-EMAIL_HOST_USER = 'aaron@aaronbauch.com'
-EMAIL_HOST_PASSWORD = '2856alpha'
-SERVER_EMAIL = 'aaron@aaronbauch.com'
-DEFAULT_FROM_EMAIL = 'Aaron@aaronbauch.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ubuntuaaron@gmail.com'
+EMAIL_HOST_PASSWORD = 'alpha2856'
+SERVER_EMAIL = 'ubuntuaaron@gmail.com'
+DEFAULT_FROM_EMAIL = 'ubuntuaaron@gmail.com'
